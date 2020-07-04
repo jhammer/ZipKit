@@ -125,7 +125,6 @@
 		CB6F09CE174838FC00F91524 /* ZipKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZipKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6F09D6174838FC00F91524 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB6F09D9174838FC00F91524 /* ZipKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZipKit-Info.plist"; sourceTree = "<group>"; };
-		CB6F09DD174838FC00F91524 /* ZipKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZipKit-Prefix.pch"; sourceTree = "<group>"; };
 		CB6F09E61748398400F91524 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		CB6F09ED17483A9A00F91524 /* GMAppleDouble+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMAppleDouble+ZKAdditions.h"; sourceTree = "<group>"; };
 		CB6F09EE17483A9A00F91524 /* NSData+ZKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ZKAdditions.h"; sourceTree = "<group>"; };
@@ -161,8 +160,6 @@
 		CB6F0A0D17483A9A00F91524 /* ZKFileArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKFileArchive.m; sourceTree = "<group>"; };
 		CB6F0A0E17483A9A00F91524 /* ZKLFHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKLFHeader.m; sourceTree = "<group>"; };
 		CB6F0A0F17483A9A00F91524 /* ZKLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKLog.m; sourceTree = "<group>"; };
-		CB6F0A3917483B7900F91524 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
-		CB6F0A3A17483B7900F91524 /* COPYING.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING.TXT; sourceTree = "<group>"; };
 		CB6F0A3B17483CC900F91524 /* COPYING.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING.TXT; path = MacFUSE/COPYING.TXT; sourceTree = "<group>"; };
 		CB6F0A3C17483CC900F91524 /* GMAppleDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMAppleDouble.h; path = MacFUSE/GMAppleDouble.h; sourceTree = "<group>"; };
 		CB6F0A3D17483CC900F91524 /* GMAppleDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMAppleDouble.m; path = MacFUSE/GMAppleDouble.m; sourceTree = "<group>"; };
@@ -205,8 +202,6 @@
 		CB6F09C4174838FC00F91524 = {
 			isa = PBXGroup;
 			children = (
-				CB6F0A3A17483B7900F91524 /* COPYING.TXT */,
-				CB6F0A3917483B7900F91524 /* Credits.html */,
 				CB6F09D7174838FC00F91524 /* ZipKit */,
 				CB6F09D8174838FC00F91524 /* Supporting Files */,
 				CB6F09D0174838FC00F91524 /* Frameworks */,
@@ -254,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				CB6F09D9174838FC00F91524 /* ZipKit-Info.plist */,
-				CB6F09DD174838FC00F91524 /* ZipKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			path = ZipKit;
@@ -465,15 +459,15 @@
 		CB6F09C5174838FC00F91524 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Karl Moskowski";
 			};
-			buildConfigurationList = CB6F09C8174838FC00F91524 /* Build configuration list for PBXProject "ZipKit" */;
+			buildConfigurationList = CB6F09C8174838FC00F91524 /* Build configuration list for PBXProject "ZipKit Framework" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CB6F09C4174838FC00F91524;
 			productRefGroup = CB6F09CF174838FC00F91524 /* Products */;
@@ -664,15 +658,13 @@
 		CB6F09E4174838FC00F91524 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZipKit/ZipKit-Prefix.pch";
 				INFOPLIST_FILE = "ZipKit/ZipKit-Info.plist";
-				INSTALL_PATH = "@rpath";
-				PRODUCT_BUNDLE_IDENTIFIER = com.voodooergonomics.ZipKitFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = me.karlmoskowski.ZipKitFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -681,15 +673,14 @@
 		CB6F09E5174838FC00F91524 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZipKit/ZipKit-Prefix.pch";
 				INFOPLIST_FILE = "ZipKit/ZipKit-Info.plist";
 				INSTALL_PATH = "@rpath";
-				PRODUCT_BUNDLE_IDENTIFIER = com.voodooergonomics.ZipKitFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = me.karlmoskowski.ZipKitFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -698,9 +689,8 @@
 		CB6F0A5417483E5000F91524 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZipKit/ZipKit-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/ZipKit;
 			};
@@ -709,9 +699,8 @@
 		CB6F0A5517483E5000F91524 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZipKit/ZipKit-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/ZipKit;
 			};
@@ -720,9 +709,8 @@
 		CB6F0AA317484BDE00F91524 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/touchzipkit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZipKit/ZipKit-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -734,9 +722,8 @@
 		CB6F0AA417484BDE00F91524 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/touchzipkit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZipKit/ZipKit-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -749,7 +736,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB6F09C8174838FC00F91524 /* Build configuration list for PBXProject "ZipKit" */ = {
+		CB6F09C8174838FC00F91524 /* Build configuration list for PBXProject "ZipKit Framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB6F09E1174838FC00F91524 /* Debug */,
